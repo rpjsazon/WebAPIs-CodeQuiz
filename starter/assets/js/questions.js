@@ -1,0 +1,6 @@
+var quiz = {
+  question: "",
+  answers: [
+    
+  ]
+}
