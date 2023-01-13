@@ -2,6 +2,7 @@ var currentQuestion = 0;
 var score = 0;
 var timeRemaining = 60;
 
+
 // Initialized index.html Line 25 <button id="start">Start Quiz</button>
 var startListen = document.querySelector("#start");
 startListen.addEventListener("click", startQuiz);
@@ -24,11 +25,33 @@ function startTimer() {
     if (timeRemaining === 0) {
       endQuiz();
     }
-  }, 1000);
+  }, 10);
 }
 
+// To end the quiz. Once, the timer remaining hit 0 then show the final score.
+function endQuiz() {
+  // Reference: https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
+  clearInterval();
+  var endScreen = document.querySelector("#end-screen");
+  endScreen.style.display = "block";
+  document.querySelector("#final-score").textContent = score;
+}
+
+// How can I display the questions to the HTML, I was thinking to change the P tags instead of
+// the div question.
 function displayQuestion(){
-  var currentQ = questions[currentQuestion];
-  var questionElement = document.querySelector("#question-title")
-  questionElement.textContent = currentQ.question;
+  // Calling objects in question.js
+  var currentQ = quiz[currentQuestion];
+
+  var questionElement = document.querySelector("#questions");
+  questionElement.style.display = "block";
+  // Reference: https://www.w3schools.com/js/js_json_stringify.asp
+  // Re-watched Zoom Meeting with Dan about JSON stringify and how to use it to convert object to string.
+  questionElement.textContent = JSON.stringify(currentQ.question);
+
+  var choicesElement = document.querySelector(".choices");
+  choicesElement.innerHTML = "";
+  for (let i = 0; i < currentQ.answers.length; i++) {
+    
+  }
 }

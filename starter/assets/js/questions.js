@@ -1,5 +1,5 @@
 // Question added with boolean to check if the answers are correct or incorrect
-var questions = [
+var quiz = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
     answers: [
