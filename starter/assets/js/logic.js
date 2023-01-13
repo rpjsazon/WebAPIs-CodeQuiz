@@ -25,7 +25,7 @@ function startTimer() {
     if (timeRemaining === 0) {
       endQuiz();
     }
-  }, 10);
+  }, 1000);
 }
 
 // To end the quiz. Once, the timer remaining hit 0 then show the final score.
@@ -39,6 +39,7 @@ function endQuiz() {
 
 // How can I display the questions to the HTML, I was thinking to change the P tags instead of
 // the div question.
+// Create div? 
 function displayQuestion(){
   // Calling objects in question.js
   var currentQ = quiz[currentQuestion];
@@ -49,9 +50,18 @@ function displayQuestion(){
   // Re-watched Zoom Meeting with Dan about JSON stringify and how to use it to convert object to string.
   questionElement.textContent = JSON.stringify(currentQ.question);
 
-  var choicesElement = document.querySelector(".choices");
-  choicesElement.innerHTML = "";
-  for (let i = 0; i < currentQ.answers.length; i++) {
-    
-  }
+  // Test For Loop.
+  // for (let i = 0; i < currentQ.answers.length; i++) {
+  //   choicesElement[i].setAttributes("style", "display: block");
+  //   choicesElement[i].textContent = currentQ.answers;
+  // }
+
+  // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+  // for (let i = 0; i < currentQ.answers.length; i++) {
+
+  //   var newDiv = document.getElementById("choices");
+  //   document.body.insertBefore(newDiv);
+  // }
+
+  
 }
