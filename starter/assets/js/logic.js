@@ -49,19 +49,5 @@ function displayQuestion(){
   // Reference: https://www.w3schools.com/js/js_json_stringify.asp
   // Re-watched Zoom Meeting with Dan about JSON stringify and how to use it to convert object to string.
   questionElement.textContent = JSON.stringify(currentQ.question);
-
-  // Test For Loop.
-  // for (let i = 0; i < currentQ.answers.length; i++) {
-  //   choicesElement[i].setAttributes("style", "display: block");
-  //   choicesElement[i].textContent = currentQ.answers;
-  // }
-
-  // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-  // for (let i = 0; i < currentQ.answers.length; i++) {
-
-  //   var newDiv = document.getElementById("choices");
-  //   document.body.insertBefore(newDiv);
-  // }
-
   
 }
