@@ -82,6 +82,8 @@ function displayQuestion(){
         displayQuestion();
       } else {
         endQuiz();
+        // Display: None to hide the choice, also to avoid the player adding score if the button is enable.
+        answerElement.style.display = "none";
       }
     });
     answerElement.appendChild(button);
@@ -92,6 +94,8 @@ function displayQuestion(){
 function endQuiz() {
   // Reference: https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
   var endScreen = document.querySelector("#end-screen");
+  // Change the style disply to block (visible).
   endScreen.style.display = "block";
+  // To display the score in to HTML.
   document.querySelector("#final-score").textContent = score;
 }
