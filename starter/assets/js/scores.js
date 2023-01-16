@@ -1,19 +1,31 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
 // It is not working.
-function submitS() {
+
+var submitScore = document.getElementById("submitBtn");
+submitScore.addEventListener("click", function() {
+  // Navigate to highscore.html
+  window.location.href = "highscores.html";
+
+  // Save the name and score to the localStorage
+  // Not working!
+  localStorage.setItem("initials-name", initials);
+  localStorage.setItem("score", score);
+
+  // Once the submit button is clicked, get the element from initials-name value
+  var insertName = document.querySelector("initials-name").value;
+  
+  // then, create element "ol"
   var newitem = document.createElement("ol");
-  // var newname = document.querySelector("#initials-name").value;
 
-  var newname = document.createTextNode("This is not working");
-
+  // then, insert the value of the initials name to the new created list.
+  var newname = document.getElementById(insertName);
   newitem.appendChild(newname);
 
-  var currentHS = document.querySelector("#highscores");
+  // then, insert the name after the id: highscores
+  var currentHS = document.querySelector("highscores");
   document.body.insertBefore(newitem, currentHS);
   
-  // var nameList = document.getElementById("#highscores");
-  // nameList.textContent(newListItem);
-}
+})
 
 // var submitScore = document.querySelector("#submit");
 // submitScore.addEventListener("click", function() {
